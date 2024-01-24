@@ -1,0 +1,107 @@
+.ContainerNav {
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  padding: 28px 12%;
+  transition: all 0.5s;
+}
+.ContainerNav .logo {
+  display: flex;
+  align-items: center;
+}
+.ContainerNav .logo svg {
+  color: var(--main-color);
+  font-size: 28px;
+  margin-right: 3px;
+}
+.ContainerNav .logo span {
+  color: var(--text-light);
+  font-size: 1.7rem;
+  margin-right: 3px;
+  font-weight: 600;
+}
+
+.ContainerNav .navbar {
+  display: flex;
+}
+.ContainerNav .navbar a {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  margin: 0px 30px;
+  transition: all 0.5s ease;
+}
+.ContainerNav .navbar a:hover {
+  color: var(--main-color);
+  
+  }
+.ContainerNav .navbar a:hover  {
+  color: var(--main-color);
+  
+  }
+.ContainerNav .navbar a.active {
+  color: var(--main-color);
+}
+
+.ContainerNav #menu-icon {
+  font-size: 35px;
+  color: var(--text-light);
+  cursor: pointer;
+  z-index: 100;
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  .ContainerNav {
+    padding: 14px 2%;
+    transition: 0.2s;
+  }
+  .ContainerNav .navbar a {
+    padding: 5px;
+    margin: 0px 20px;
+  }
+}
+@media (max-width: 900px) {
+  .ContainerNav #menu-icon {
+    display: block;
+  }
+  .ContainerNav .navbar {
+    position: absolute;
+    top: 70px;
+    right: 2%;
+    width: 270px;
+    padding-bottom: 15px;
+    background: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    /* display: none; */
+    transform: scale(0);
+    transform-origin: top right;
+  }
+  .ContainerNav .navbar a {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    display: block;
+    margin: 12px 0;
+    padding: 0 25px;
+  }
+  .ContainerNav .navbar a:hover {
+    color: var(--text-light);
+    transform: translateY(5px);
+  }
+  .ContainerNav .navbar a.active {
+    color: var(--text-light);
+  }
+  .ContainerNav .navbar.open {
+    transform: scale(1);
+    z-index: 1001;
+    display: flex;
+  }
+}
