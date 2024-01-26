@@ -1,0 +1,67 @@
+.contact {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  /* width: 500px; */
+}
+.contact h2 {
+  font-size: 1.1em;
+  margin: 0.6em 0;
+  min-width: 120px;
+  width: 30%;
+  text-align: center;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--back-dark);
+}
+.contact h2:nth-child(1) {
+    width: 40%;
+}
+
+.contact .social {
+  /* height: 60vh; */
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+
+  /* align-items: center;
+   justify-content: center;  */
+}
+
+.contact .social svg {
+  font-size: 2.6em;
+  color: var(--main-color);
+  background-color: var(--back-dark);
+  padding: 5px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.email {
+  display: flex;
+  min-width: 200px;
+  max-width: 210px;
+  height:.4em;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.email svg {
+  padding: 2px;
+  font-size: 22px;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+.contact svg:hover {
+  /* font-size: 3em; */
+  color: var(--back-dark);
+  background-color: var(--main-color);
+  transform: scale(1.1);
+}
+
+.copy {
+  font-weight: bold;
+  color: #0c9600;
+}

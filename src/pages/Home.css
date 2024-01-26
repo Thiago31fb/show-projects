@@ -1,6 +1,5 @@
 .home {
-  background-color: #ebebeb;
-  min-height: 100vh;
+  background-color: var(--back-light);
 }
 
 .SobrerContainer {
@@ -14,7 +13,7 @@
   border-radius: 50%;
   width: 230px;
   height: 230px;
-  border: solid 1px rgba(0, 0, 0, 0.4);
+  border: solid 1px var(--back-dark);
 }
 .containerHome {
   margin-top: 1em;
@@ -40,18 +39,13 @@
   font-size: 1.2rem;
   position: relative;
   padding: 4px;
-  color: #696969;
+  color: var(--text-dark);
 }
 .perfilInfo p {
   display: flex;
   position: relative;
   padding: 4px;
-  color: #696969;
-}
-.formacao span {
-  font-weight: bold;
-  margin-right: 5px;
-  color: #000000;
+  color: var(--text-dark);
 }
 
 .tecnologias {
@@ -67,26 +61,51 @@
   margin: 2px 3px;
   height: 35px;
 }
-.projetos{
+.projetos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px 30px;
 }
-.projetos h3{
+.projetos h3 {
   margin-bottom: 12px;
   text-align: center;
 }
-.projetos a{
-
+.projetos .projetosLink {
+  margin-top: 1em;
   font-size: 1.1rem;
-  color: var(--text-color2);
+  color: var(--text-dark);
   transition: 300ms;
-}
-.projetos a:hover{
+  font-weight: bold;
+  padding: .4em;
+  border: solid 1px var(--text-dark);
+  border-radius: 5px;
+  transition: all .6s;
 
-  font-size: 1.1rem;
+}
+.projetos a:hover {
   color: var(--main-color);
-/* transform: scale(1px); */
+  transform: scale(1.04);
+  border-color: var(--main-color);
+  background-color: var(--back-dark);
+}
+.formacao {
+  margin-top: 1em;
+}
+.formacao h3 {
+  margin-bottom: 1em;
 }
 
-
-/* .projetosContainer {
-} */
+.formacao .cardFormacao span {
+  margin-right: 5px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.formacao .cardFormacao {
+  margin: .8em ;
+  max-width: 700px;
+}
+.formacao .cardFormacao h4{
+  color: var(--text-dark);
+  font-size: 1.1em;
+}

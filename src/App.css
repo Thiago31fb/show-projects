@@ -1,0 +1,31 @@
+.content {
+  
+  min-height: 75vh;
+  background-color: var(--back-light);
+  
+}
+
+
+.loading {
+  padding: 1em;
+  text-align: center;
+  font-weight: 500;
+  animation: changeColor 1.8s infinite;
+}
+
+@keyframes changeColor {
+  0%, 100% {
+    color: var(--text-dark);
+  }
+
+  50% {
+    color: var(--main-color);
+  }
+}
+:root {
+  --main-color: #29cbfd;
+  --text-light: #eee;
+  --text-dark: #464646;
+  --back-light: #ebebeb;
+  --back-dark: #222;
+}

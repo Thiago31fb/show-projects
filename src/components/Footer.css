@@ -1,0 +1,21 @@
+footer {
+  border-top: 2px solid var(--main-color);
+  background-color: var(--back-dark);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+footer h3 {
+  margin-bottom: 1.2em;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+footer span {
+  font-weight: bold;
+  color: var(--main-color);
+}

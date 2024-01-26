@@ -19,8 +19,4 @@ code {
   text-decoration: none;
   list-style: none;
 }
-:root {
-  --main-color: #29cbfd;
-  --text-light: #eee;
-  --text-dark: #464646;
-}
+

@@ -1,10 +1,13 @@
 .ContainerNav {
+  position: sticky;
+  top: 0;
+
   width: 100%;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #222;
+  background-color: var(--back-dark);
   padding: 28px 12%;
   transition: all 0.5s;
 }
@@ -37,12 +40,10 @@
 }
 .ContainerNav .navbar a:hover {
   color: var(--main-color);
-  
-  }
-.ContainerNav .navbar a:hover  {
+}
+.ContainerNav .navbar a:hover {
   color: var(--main-color);
-  
-  }
+}
 .ContainerNav .navbar a.active {
   color: var(--main-color);
 }

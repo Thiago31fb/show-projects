@@ -1,48 +1,38 @@
 import { useState } from "react";
 import Card from "../components/Card";
 
-import ClimaApp from "../img/climaApp.PNG";
-import moviesLib from "../img/moviesLib.PNG";
-
 import "./Projetos.css";
+import useFetch from "../useFetch";
 
 const Projetos = () => {
-  const [corDaProjetos, setCorDaProjetos] = useState("#333");
+  const [corDaProjetos, setCorDaProjetos] = useState("var(--back-light)");
 
   const trocarCorDaProjetos = (novaCor) => {
     setCorDaProjetos(novaCor);
   };
-  const cards = [
-    {
-      id: 1,
-      nome: "Clima App",
-      color: "#666",
-      img: ClimaApp,
-      link: "https://climate-app-nine.vercel.app",
-      gitHub: "https://github.com/Thiago31fb/climate-app",
-      descricao: "",
-    },
-    {
-      id: 2,
-      nome: "moviesLib",
-      color: "#7a541c",
-      img: moviesLib,
-      link: "https://thiago31fb.github.io/MoviesLib/",
-      gitHub: "https://github.com/Thiago31fb/MoviesLib",
-      descricao: "",
-    },
-  ];
+
+  const {
+    data: data,
+    isPending,
+    error,
+  } = useFetch("https://json-server-neon-omega.vercel.app/showProjects/");
+
   return (
     <div className="Projetos" style={{ background: corDaProjetos }}>
+      <h3>Meus Principais projetos</h3>
       <div className="container">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            dados={card}
-            trocarCorDaProjetos={trocarCorDaProjetos}
-          />
-        ))}
+        {error && <div>{error}</div>}
+        {isPending && <div className="loading">Carregando...</div>}
+        {data &&
+          data.map((card) => (
+            <Card
+              key={card.id}
+              dados={card}
+              trocarCorDaProjetos={trocarCorDaProjetos}
+            />
+          ))}
       </div>
+      <p className="textEmBreve">Em breve mais projetos!</p>
     </div>
   );
 };

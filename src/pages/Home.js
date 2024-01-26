@@ -1,21 +1,17 @@
 import Card from "../components/Card";
 import perfil from "../img/perfil.PNG";
-import ClimaApp from "../img/climaApp.PNG";
-
+import useFetch from "../useFetch";
+// import ClimaApp from "../img/climaApp.PNG";
 
 import "./Home.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const card = {
-    id: 1,
-    nome: "Clima App",
-    color: "#666",
-    img: ClimaApp,
-    link: "https://climate-app-nine.vercel.app",
-    gitHub: "https://github.com/Thiago31fb/climate-app",
-    descricao: "",
-  };
+  const {
+    data: data,
+    isPending,
+    error,
+  } = useFetch("https://json-server-neon-omega.vercel.app/showProjects/1");
 
   return (
     <div className="home">
@@ -27,11 +23,11 @@ const Home = () => {
 
             <p>
               Tive a oportunidade de estagiar na Prodemge, interagi com sistemas
-              cruciais do governo. Participei no levantamento de custos para o
-              desenvolvimento do serviço de nuvem. Agora, busco aprimorar minha
-              expertise na área de front-end, concentrando-me em tecnologias
-              como React, Angular e TypeScript. Meu objetivo é ampliar minha
-              habilidade técnica e aplicá-la de forma inovadora neste campo
+              cruciais do governo. Participei do levantamento de custos para o
+              desenvolvimento do serviço de nuvem. Agora, busco aprimorar minhas
+              habilidades na área de front-end, concentrando-me em tecnologias
+              como React, Angular e TypeScript. Meu objetivo é ampliar meu
+              conhecimento técnico e aplicá-lo de forma inovadora neste campo
               dinâmico.
             </p>
           </div>
@@ -67,8 +63,12 @@ const Home = () => {
         <div className="containerHome">
           <div className="projetos">
             <h3>Projeto em destaque</h3>
-            <Card dados={card} trocarCorDaProjetos="" />
-            <Link to={"projetos"}>Exibir Todos os Projetos</Link>
+            {error && <div>{error}</div>}
+            {isPending && <div className="loading">Carregando...</div>}
+            {data && <Card dados={data} trocarCorDaProjetos="" />}
+            <Link className="projetosLink" to={"projetos"}>
+              Exibir Todos os Projetos
+            </Link>
           </div>
           <div className="formacao">
             <h3>FORMAÇÃO ACADÊMICA</h3>
