@@ -1,17 +1,14 @@
 import Card from "../components/Card";
 import perfil from "../img/perfil.PNG";
 import useFetch from "../useFetch";
-// import ClimaApp from "../img/climaApp.PNG";
 
 import "./Home.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const {
-    data: data,
-    isPending,
-    error,
-  } = useFetch("https://json-server-neon-omega.vercel.app/showProjects/1");
+  const { data, isPending, error } = useFetch(
+    "https://json-server-neon-omega.vercel.app/showProjects/1"
+  );
 
   return (
     <div className="home">
@@ -25,11 +22,12 @@ const Home = () => {
               Tive a oportunidade de estagiar na Prodemge, interagi com sistemas
               cruciais do governo. Participei do levantamento de custos para o
               desenvolvimento do serviço de nuvem. Agora, busco aprimorar minhas
-              habilidades na área de front-end, concentrando-me em tecnologias
-              como React, Angular e TypeScript. Meu objetivo é ampliar meu
-              conhecimento técnico e aplicá-lo de forma inovadora neste campo
-              dinâmico.
+              habilidades na área de Desenvolvimento, concentrando-me em
+              tecnologias como React, Angular. Meu objetivo é
+              ampliar meu conhecimento técnico e aplicá-lo de forma inovadora
+              neste campo dinâmico.
             </p>
+            <p>Este portfólio destaca projetos de Front-end!</p>
           </div>
           <img className="fotoPerfil" src={perfil} alt="Foto" />
         </div>
